@@ -1,26 +1,27 @@
 <template>
   <div class="search-box">
-    <input @input="onInput" type="text" class="search-bar"/>
+    <input @change="fetchWeather($event.target.value)" type="text" class="search-bar"/>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'SearchBar',
-  methods: {
-    onInput(event) {
-      this.$emit('termChange',event.target.value);
-    }
-  }
+  methods: mapActions(['fetchWeather'])
 }
 </script>
 
 <style scoped>
   input {
     border-radius: 15px 15px 15px 15px;
-    width: 70%;
+    width: 40%;
     box-shadow: 0px 0px 16px rgb(0, 0, 0, 0.25);
     background-color: rgb(255, 255, 255, 0.75);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
   }
   
   div {

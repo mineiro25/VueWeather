@@ -1,5 +1,5 @@
 <template>
-  <div id="app" >
+  <div id="app" :class="setBackground">
     <!--
       SearchBar component
     -->
@@ -23,6 +23,7 @@
 import SearchBar from './components/SearchBar';
 import LocalInformation from './components/LocalInformation';
 import LocalWeather from './components/LocalWeather';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'App',
@@ -30,7 +31,8 @@ export default {
     SearchBar,
     LocalInformation,
     LocalWeather
-  }
+  },
+  computed: mapGetters(['setBackground'])
 }
 </script>
 
@@ -55,4 +57,31 @@ body {
   padding: 25px;
 }
 
+#app.clear {
+  background-image: url('./assets/clear.jpg');
+}
+
+#app.clouds {
+  background-image: url('./assets/clouds.jpg');
+}
+
+#app.drizzle {
+  background-image: url('./assets/drizzle.jpg');
+}
+
+#app.else {
+  background-image: url('./assets/else.jpg');
+}
+
+#app.rain {
+  background-image: url('./assets/rain.jpg');
+}
+
+#app.snow {
+  background-image: url('./assets/snow.jpg');
+}
+
+#app.thunderstorm {
+  background-image: url('./assets/thunderstorm.jpg');
+}
 </style>

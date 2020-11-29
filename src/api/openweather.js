@@ -5,9 +5,7 @@ const ROOT_URL = 'https://api.openweathermap.org/data/2.5/';
 
 export default {
     fetchWeather: (city) => {
-        axios.get(`${ROOT_URL}weather?q=${city}
-            &units=metric&APPID=${API_KEY}`).then(res => {
-                return res.json();
-            });
+        return axios.get(`${ROOT_URL}weather?q=${city}
+            &units=metric&APPID=${API_KEY}`).catch(error => console.log(error));
     }
 }

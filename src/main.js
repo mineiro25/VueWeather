@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import modules from './modules';
+import store from './store';
 
 new Vue({
-  modules,
+  store,
   render: h => h(App),
 }).$mount('#app')
